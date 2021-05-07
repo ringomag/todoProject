@@ -1,8 +1,23 @@
-<p>Are you shure you want to delete "{{item}}"</p>
+{% extends 'base.html' %} 
 
-<a href="{% url 'index' %}">Cancel</a>
+{% block content %}
+<div class="container">
 
-<form method="POST" action="">
-  {% csrf_token %}
-  <input type="submit" name="Confirm">
-</form>
+  <h2 style="color:rgb(231, 201, 201)" class="m-4 mt-5 d-flex justify-content-center">Are you shure you want to delete "{{item}}"</h2>
+
+  
+  <div class="row d-flex justify-content-center">
+    <div class="col-sm-3">
+      <form method="POST" action="" class="">
+        {% csrf_token %}
+        <a href="{% url 'index' %}" class="btn btn-info form-control">Cancel</a>
+        <input type="submit" name="Confirm" class="btn btn-danger form-control">
+      </form>
+    </div>
+  
+</div>
+
+</div>
+
+
+{% endblock %}
